@@ -10,7 +10,7 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh "echo test"
+        sh "echo test "
       }
     }
   }
