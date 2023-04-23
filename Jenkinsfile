@@ -5,7 +5,7 @@ pipeline {
     stage('Git Clone') {
       steps {
         // Get some code from a GitHub repository
-        git 'https://github.com/imajeetyadav/DevOps-Project.git'
+        git credentialsId: '8f05a564-bb5f-42e9-be53-3968377ecccd', url: 'https://github.com/imajeetyadav/DevOps-Project.git'
       }
     }
     stage('Build') {
