@@ -5,7 +5,7 @@ pipeline {
     stage('Git Clone') {
       steps {
         // Get some code from a GitHub repository
-        git 'git@github.com:LudwigSimonsson/RiksakademinAI-Live.git'
+        git 'git@github.com:imajeetyadav/DevOps-Project.git'
       }
     }
     stage('Build') {
