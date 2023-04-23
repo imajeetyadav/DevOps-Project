@@ -7,5 +7,5 @@ RUN mvn -f /app/pom.xml clean package
 # Create an Image
 FROM openjdk:8-jdk-alpine
 EXPOSE 8080
-COPY --from=build /app/target/java-0.0.1-SNAPSHOT.jar app.jar
-ENTRYPOINT ["sh", "-c", "java -jar app.jar"]
+COPY --from=build /app/target/java-0.0.1-SNAPSHOT.war app.war
+ENTRYPOINT ["sh", "-c", "java -jar app.war"]
