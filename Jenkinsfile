@@ -13,6 +13,7 @@ pipeline {
         sh "echo test"
       }
     }
+  }
   post {
     always {
       // One or more steps need to be included within each condition's block.
