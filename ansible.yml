@@ -7,4 +7,4 @@
     - name: remove docker image
       shell: docker image rm imajeetyadav/maven-application
     - name: create new container
-      shell: docker container run -itd --name maven-application -p 9000:80 imajeetyadav/maven-application
+      shell: docker container run -itd --name maven-application -p 8080:8080 imajeetyadav/maven-application
