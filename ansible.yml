@@ -1,0 +1,10 @@
+- hosts: all
+  tasks:
+    - name: stop container
+      shell: docker container stop maven-application
+    - name: remove container
+      shell: docker container rm maven-application
+    - name: remove docker image
+      shell: docker image rm imajeetyadav/maven-application
+    - name: create new container
+      shell: docker container run -itd --name maven-application -p 9000:80 imajeetyadav/maven-application
