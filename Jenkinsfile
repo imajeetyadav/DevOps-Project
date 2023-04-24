@@ -2,11 +2,6 @@ pipeline {
   agent any
 
   stages {
-    stage('Maven Test') {
-      steps {
-        sh "mvn clean test"
-      }
-    }
     stage('Sonarqube'){
         steps {
             withCredentials([string(credentialsId: 'Sonarqube', variable: 'SECRET')]) {
@@ -16,6 +11,11 @@ pipeline {
                 -Dsonar.login=${SECRET}"
             }
         }
+    }
+    stage('Maven Test') {
+      steps {
+        sh "mvn test"
+      }
     }
     stage('Maven Build') {
       steps {
