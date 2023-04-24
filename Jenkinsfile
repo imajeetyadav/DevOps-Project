@@ -14,6 +14,7 @@ pipeline {
                 -Dsonar.projectKey=Maven-Project \
                 -Dsonar.host.url=http://43.204.110.148:9000 \
                 -Dsonar.login=${SECRET}"
+            }
         }
     }
     stage('Maven Build') {
