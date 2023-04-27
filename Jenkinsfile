@@ -42,7 +42,7 @@ pipeline {
 
     stage('Deploy using Ansible') {
       steps {
-        ansiblePlaybook credentialsId: 'server2', disableHostKeyChecking: true, inventory: 'inventory.ini', playbook: 'ansible-playbook ansible.yml'
+        ansiblePlaybook credentialsId: 'server2', disableHostKeyChecking: true, inventory: 'inventory.ini', playbook: 'ansible.yml'
       }
     }
   }
