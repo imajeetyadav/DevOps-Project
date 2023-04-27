@@ -42,7 +42,7 @@ pipeline {
 
     stage('Deploy using Ansible') {
       steps {
-        sh "ansible-playbook ansible.yml -i inventory.ini -u ubuntu"
+        ansiblePlaybook credentialsId: 'server2', disableHostKeyChecking: true, inventory: 'inventory.ini', playbook: 'ansible-playbook ansible.yml'
       }
     }
   }
