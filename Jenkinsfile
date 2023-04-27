@@ -2,16 +2,16 @@ pipeline {
   agent any
 
   stages {
-//     stage('Sonarqube'){
-//         steps {
-//             withCredentials([string(credentialsId: 'Sonarqube', variable: 'SECRET')]) {
-//                sh " mvn sonar:sonar \
-//                 -Dsonar.projectKey=Maven-Project \
-//                 -Dsonar.host.url=http://43.204.110.148:9000 \
-//                 -Dsonar.login=${SECRET}"
-//             }
-//         }
-//     }
+    stage('Sonarqube'){
+        steps {
+            withCredentials([string(credentialsId: 'Sonarqube', variable: 'SECRET')]) {
+               sh " mvn sonar:sonar \
+                -Dsonar.projectKey=maven-project \
+                -Dsonar.host.url=http://13.233.101.59 \
+                -Dsonar.login=${SECRET}"
+            }
+        }
+    }
     stage('Maven Test') {
       steps {
         sh "mvn clean test"
