@@ -40,11 +40,11 @@ pipeline {
       }
     }
 
-//     stage('Deploy using Ansible') {
-//       steps {
-//         sh "ansible-playbook ansible.yml -i inventory.ini -u ubuntu"
-//       }
-//     }
+    stage('Deploy using Ansible') {
+      steps {
+        sh "ansible-playbook ansible.yml -i inventory.ini -u ubuntu"
+      }
+    }
   }
   post {
     always {
